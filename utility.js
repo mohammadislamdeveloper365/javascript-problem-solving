@@ -170,3 +170,89 @@ function showFibonacciSeries(input){
     return result;
 }
 
+//18. Write a program that finds the sum of all digits in a number?
+
+function findDigitSum(input){
+   
+    let remainder,sum = 0, divisionResult = input;
+    
+    do {
+        divisionResult = parseInt(input / 10);
+        remainder = input % 10;
+        sum += remainder;
+        input = divisionResult;
+    }while(input !== 0);
+
+    return sum;
+    
+}
+
+
+
+//19. Write a program to find an armstrong number?
+
+function isArmstrongNumber(input) {
+    input = parseInt(input);
+    let remainder, result = 0, divisionResult = input, isArmstrong = false, tempInput,numberOfDigits;
+    tempInput = input;
+    numberOfDigits = input.toString().length;
+    do {
+        divisionResult = parseInt(tempInput / 10);
+        remainder = tempInput % 10;
+        result += (remainder ** numberOfDigits);
+        tempInput = divisionResult;
+    }while(tempInput !== 0);
+
+    if(result === input)
+    isArmstrong = true;
+    
+    return isArmstrong;
+    
+}
+
+
+
+//20.Write a program to find a list  of armstrong numbers between a given interval?
+
+function getArmstrongNumbers(min, max){
+    let armstrongNumberList = [];
+    for(let i = min; i <= max; i++){
+        if(isArmstrongNumber(i))
+        armstrongNumberList.push(i);
+        
+    }
+
+    return armstrongNumberList;
+}
+
+
+
+
+
+//21. Write a program to check if the input numbers have same last digit?
+function isSameLastDigit(firstInput,secondInput){
+    let isSameLastDigit = false;
+    firstInput = parseInt(firstInput);
+    secondInput = parseInt(secondInput);
+
+    firstInput = firstInput.toString();
+    secondInput = secondInput.toString();
+
+    if(firstInput[firstInput.length-1] === secondInput[secondInput.length-1])
+    isSameLastDigit = true;
+
+    return isSameLastDigit;
+}
+
+
+
+//22. Write a program which takes an array as input and replaces an item of that array with a new value?
+
+function replaceArrayItem(array,item, newItem) {
+    let indexOfItem = array.indexOf(item);
+    if(indexOfItem !== -1)
+    array[indexOfItem] = newItem;
+    return array;
+}
+
+//Write a program to find HCF of input numbers?
