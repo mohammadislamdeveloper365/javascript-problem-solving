@@ -83,9 +83,6 @@ function checkEvenNumber(input) {
 
 
 //12. Write a program to find the largest number?
-let year=2022;
-var cricket = "australia"
-let course = "javascript"
 function getLargestNumber(...input){
     let p = course;
     console.log(p)
@@ -327,3 +324,54 @@ function sliceHalfString(inputString){
 function removeLastStrings(inputString, inputNumber) {
     return inputString.slice(0, inputString.length-inputNummber)
 }
+
+//33. Write a function to find if a year is a leap year?
+
+function isLeapYear(inputYear){
+    let result = false;
+    if((inputYear % 4 === 0) && (inputYear % 100 !== 0 || inputYear % 400 === 0)) {
+        result = true;
+    }
+
+    return result;
+}
+
+
+//34. Write a function that returns odd numbers from a given numbers of input?
+function findOddNumbers(inputArray){
+    let result = [];
+    let size = inputArray.length;
+    for(let i=0; i<size; i++) {
+        if(inputArray[i] % 2 !== 0) {
+            result.push(inputArray[i]);
+        }
+    }
+    return result;
+}
+
+
+//35. Write a function that takes two strings (a and b) as arguments. If a contains b, append b to the beginning of a. If not, append it to the end. Return the concatenation
+
+function appendString(inputString, inputWord) {
+   return inputString.includes(inputWord) ?(inputWord + inputString):inputString.concat(inputWord);
+}
+
+
+//36. Write a function that takes two strings (a and b) as arguments. Return the number of times a occurs in b.
+
+function getCharacterOccurence(a, b) {
+   let occurences = 0;
+   let size = b.length;
+   for(let i=0; i<size; i++) {
+        if(b[i] === a)
+        occurences += 1;
+   }
+   return occurences;
+}
+
+//37. Write a function that checks if the input number is a whole number?
+
+function isWholeNumber(number) {
+    return number % 1 === 0;
+}
+
