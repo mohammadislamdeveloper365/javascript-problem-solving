@@ -83,8 +83,12 @@ function checkEvenNumber(input) {
 
 
 //12. Write a program to find the largest number?
-
+let year=2022;
+var cricket = "australia"
+let course = "javascript"
 function getLargestNumber(...input){
+    let p = course;
+    console.log(p)
     let largest = input[0];
     input.forEach(value=>{
         largest = value > largest ? value : largest;
@@ -100,6 +104,11 @@ function isPrime(input){
     if(input == 1){
         isPrime = false;
     }
+
+    else if(input == 2) {
+        isPrime = true;
+    }
+
     else if(input > 1) {
         for(let i=2; i<input; i++){
             if (input % i === 0){
@@ -255,4 +264,66 @@ function replaceArrayItem(array,item, newItem) {
     return array;
 }
 
-//Write a program to find HCF of input numbers?
+//23. You are given an array of integers, replace all of the occurances of elementToReplace with subtractionElement?
+
+function replaceArrayElement (inputArray, elementToReplace,subtractionElement) {
+    inputArray.forEach((value,index)=>{
+        if(elementToReplace === value){
+            inputArray[index] = subtractionElement;
+        }
+    })
+
+    return inputArray;
+}
+
+//24. Write a function that takes two parameters as argument. Return true if both are equal and of same type?
+
+function checkEquality(a,b) {
+    return a === b;
+}
+
+
+//25. Write a function that takes a value as argument. Return the type of the value.
+
+function checkType(a){
+    return typeof a;
+}
+
+//26. Write a function that takes a string (a) and a number (n) as argument. Return the nth character of 'a'.
+
+function findCharOfString(inputString, inputNumber){
+    return inputString[inputNummber-1];
+}
+
+//27.Write a function that takes a string as argument. Extract the last input number characters from the string. Return the result?
+
+function findLastStringWords(inputString, inputNummber ){
+    return inputString.slice(inputString.length - inputNummber);
+}
+
+//28. Write a program that takes a string as argument. Extract the first input number character from the string
+function findFirstStringWords(inputString, inputNummber ){
+    return inputString.slice(0,inputNummber);
+}
+
+//29. Remove the first input number characters of a string?
+function removeFirstStringWords(inputString, inputNumber) {
+    return inputString.slice(inputNumber);
+}
+
+
+//30. Write a function that takes a string as argument. The string contains the substring givenInput. Return the index of givenInput.
+function indexOfString(inputString, inputSubString) {
+    return inputString.indexOf(inputSubString)
+}
+
+//31. Write a function that extract first half of the string;
+function sliceHalfString(inputString){
+    return inputString.slice(0, inputString.length / 2);
+}
+
+//32. Write a function that takes a string as input, removes last inut number of characters from and return the new string?
+
+function removeLastStrings(inputString, inputNumber) {
+    return inputString.slice(0, inputString.length-inputNummber)
+}
