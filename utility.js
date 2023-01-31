@@ -375,3 +375,84 @@ function isWholeNumber(number) {
     return number % 1 === 0;
 }
 
+
+//38. Write a function that takes a string parameter and returns it in a reverse order?
+
+function reverseString(inputString) {
+    let reversedResult = '';
+    let size = inputString.length;
+    for(let i=size-1; i>=0; i--) {
+        reversedResult = reversedResult.concat(inputString[i])
+        console.log(reversedResult)
+    }
+
+    return reversedResult;
+}
+
+
+//39. Write a function that reverses the words of a string?
+
+function reverseTextWord(inputText){
+    let reversedText = [];
+    let arrayOfInput = inputText.split(" ");
+    let size = arrayOfInput.length;
+    for(let i=size-1; i>=0; i--){
+        reversedText.push(arrayOfInput[i]);
+    }
+    return reversedText.join(" ");
+}
+
+
+//40. Write a function solution that takes an alphabet as a function parameter and print whether it is VOWEL or CONSONANT?
+
+function isVowel(input) {
+    let isVowel = false;
+    switch(input){
+        case 'a' :
+        case 'e' :
+        case 'i' :
+        case 'o' :
+        case 'u' :
+        case 'A' :
+        case 'E' :
+        case 'I' :
+        case 'O' :
+        case 'U' :
+        isVowel = true;
+        break;
+        default:
+        isVowel = false;
+    }
+
+    return isVowel;
+}
+
+/*41. Suppose you want to create a shopping cart where it will calculate the total price of the products 
+added. Implement a function totalCost that will take an array of objects where each object will have 
+two properties: name and price. The function totalCost will take the array of objects as a parameter 
+and return the total price of the products added to the shopping cart.
+*/
+
+const totalCost = (products) => {
+    let sum = 0;
+    products.forEach(value=>{
+        sum += value.price;
+    })
+    return sum;
+};
+
+
+/*
+42. Write a function deleteProp which takes an array. The first element will be an object, and the second element will be a string prop.
+If the object(first element) has a property prop, the function removes the property from the object and returns ’YES’; in all other cases it returns’NO’.
+*/
+
+const deleteProperty =(arr)=>{
+    if(arr[1] in arr[0]) {
+        delete arr[0]['property'];
+        return "YES"
+    }
+    else 
+    return 'NO'
+}
+
