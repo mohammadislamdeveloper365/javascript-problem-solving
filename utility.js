@@ -84,8 +84,6 @@ function checkEvenNumber(input) {
 
 //12. Write a program to find the largest number?
 function getLargestNumber(...input){
-    let p = course;
-    console.log(p)
     let largest = input[0];
     input.forEach(value=>{
         largest = value > largest ? value : largest;
@@ -456,3 +454,161 @@ const deleteProperty =(arr)=>{
     return 'NO'
 }
 
+
+
+/*
+Can a write a function which compares two string irrespective of their case?
+*/
+
+function isStringEqual(input1, input2) {
+    return input1.toLowerCase() === input2.toLowerCase();
+}
+
+/*
+44.Write a function that takes two input and check if second input exists irrespective of entire string in first String
+*/
+
+function doesExist(inputString, searchString) {
+    return inputString.toLowerCase().includes(searchString.toLowerCase());
+}
+
+/*
+45. Write a function that takes two input and check if second input exactly exists irrespective of case?
+*/
+
+
+// 46. Write a function which removes duplicate items from an array?
+
+function removeDuplicateItems(inputArray){
+    let newArray = [];
+    for(let value of inputArray){
+        if(!newArray.includes(value)){
+            newArray.push(value);
+        }
+    }
+    return newArray;
+}
+
+//47. write a function which prints foo if an input is divisible by 3, prints boo if divisible by 5 prints fooboo if divisible by both or else return input?
+
+function printFooBoo(input){
+    if(input % 3 == 0 && input % 5 == 0){
+        return "fooboo"
+    }
+
+    else if(input % 3 == 0) {
+        return "foo";
+    }
+
+    else if(input % 5 == 0) {
+        return "boo"
+    }
+    
+    else return input;
+}
+
+
+
+//48. Find the cheapest phone from an array of phone objects?
+
+function getCheapest(inputArray) {
+    let cheapestPhone = inputArray[0];
+    for(let object of inputArray) {
+        if(cheapestPhone.price > object.price ) {
+            cheapestPhone = object;
+        }
+    }
+
+    return cheapestPhone;
+}
+
+
+
+//49. Find the total price from a shopping cart?
+
+function findTotal(inputArray){
+    let sum = 0;
+    let size = inputArray.length;
+    for(let i = 0; i<size; i++) {
+        let item = inputArray[i];
+        sum += item.price * item.number;
+    }
+    
+    return sum;
+}
+
+
+
+//50. Write a function that prints number between a range?
+
+function showIntervals(num1, num2) {
+    let result = [];
+    for(let i= num1; i<=num2; i++) {
+        result.push(i);
+    }
+    return result;
+}
+
+
+//51. Write a function that calculates the sum of odd numbers of a given interval?
+
+function getOddSum(num1, num2) {
+    let result = 0;
+    for(let i=num1; i<=num2; i++) {
+        if(i % 2 !== 0) {
+            result += i;
+        }
+    }
+    return result;
+}
+
+
+//52. Write a function that calculates the sum of even numbers from an array?
+
+function getEvenSum(inputArray){
+    let sum = 0;
+    let size = inputArray.length;
+    for(let i=0; i<size; i++) {
+        if(inputArray[i] % 2 === 0) {
+            sum += inputArray[i];
+        }
+    }
+    return sum;
+}
+
+
+
+//53. Write a function that rotates an array to input number of left positon?
+
+function rotateArrayLeft(inputArray, number) {
+    let removedArray = [];
+    let result = [];
+    for(let i=1; i<= number; i++) {
+        removedArray.push(inputArray.shift());
+    }
+    
+    result = inputArray.concat(removedArray);
+    
+    return result;
+
+}
+
+
+
+
+//54. Write a function that takes an array and reverses it?
+
+function reverseArray(inputArray) {
+    let reversedArray = [];
+    let size = inputArray.length;
+    for(let i=size-1; i>=0; i--) {
+        reversedArray.push(inputArray[i]);
+    }
+
+    return reversedArray;
+}
+
+/*
+Create a function that will receive two arrays of numbers as arguments and return an 
+array composed of all the numbers that are either in the first array or second array but not in both
+*/
