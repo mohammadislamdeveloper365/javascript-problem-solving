@@ -609,6 +609,117 @@ function reverseArray(inputArray) {
 }
 
 /*
-Create a function that will receive two arrays of numbers as arguments and return an 
+56.Create a function that will receive two arrays of numbers as arguments and return an 
 array composed of all the numbers that are either in the first array or second array but not in both
 */
+
+/*
+57.Write a function that takes input as numbers and return sum?
+*/
+
+function getSum(){
+    let sum = 0;
+    let size = arguments.length - 1;
+    for(let i=0; i<=size;i++){
+        sum += arguments[i]
+    }
+
+    return sum;
+}
+
+
+/*
+58. Write a function that converts minutes to seconds?
+*/
+function minutesToSeconds (minute) {
+    let seconds = minute * 60;
+    return seconds;
+}
+
+
+/*
+59. Create a function that takes two numbers as arguments, increments the number by +1 and returns the result.
+*/
+
+function incrementNumber(number,incrementValue) {
+    return number + incrementValue;
+}
+
+
+
+/*
+60.Create a function that takes an array containing only numbers and return the first element?
+*/
+
+function getFirstElementArray(inputArray) {
+    return inputArray[0]
+}
+
+
+/*
+61. Write a function that calculates perimeter of a rectangle?
+*/
+
+function findPerimeter(a,b,c,d) {
+    if(a && b && c && d) 
+    return a + b + c + d;
+}
+
+
+/*
+62.Write a function that takes circuit voltage and current. Find power?
+*/
+function getCircuitPower(voltage, current) {
+    return voltage * current;
+}
+
+/*
+63. Write a function that converts hours into seconds.
+*/
+
+function hoursToSeconds(hours) {
+    return hours * 60 * 60;
+}
+
+/*
+64. Create a function that finds the maximum range of a triangle's third edge, where the side lengths are all integers.
+*/
+function nextEdge(edge1, edge2) {
+    return edge1 + edge2 -1;
+}
+
+/*
+65. Write a function that returns a remainder from two inputs?
+*/
+
+function remainder(number1, number2) {
+    return number1 % number2;
+}
+
+/*
+66. Write a function that returns the string "something" joined with a space " " and the given argument a.
+*/
+
+function giveMeSomething(a) {
+	return `something ${a}`;
+}
+
+/*
+67. Given an n-sided regular polygon n, return the total sum of internal angles (in degrees).
+*/
+
+function sumPolygon(n){
+    if(n>2)
+    return (n-2) * 180;
+}
+
+
+/*
+68. A student learning JavaScript was trying to make a function. His code should concatenate a passed string name with string "Edabit" and returns it .
+*/
+
+function greetMessage(name){
+    let greet = "Welcome To Javascript";
+    return name.concat(" ",greet);
+}
+
