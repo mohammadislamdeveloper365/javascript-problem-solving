@@ -1,12 +1,21 @@
 //Javascript problems
 
-//1. Write a program which takes input and prints that?
-function printInput(input){
-    return input;
+//1.Create a function that takes two numbers as arguments and returns their sum.
+function addition(a, b) {
+	return a + b;
 }
 
 
-//2. Write a program that takes numbers as input and returns the sum?
+//2.Create a function that takes any numbers as arguments and returns their sum.
+function sumNumbers(){
+    let sum = 0;
+    for(let i=0; i<arguments.length; i++){
+        sum += arguments[i]
+    }
+    return sum;
+}
+
+//3. Write a program that takes numbers as input and returns the sum?
 
 function addNumbers(...numbers){
     let sum = 0;
@@ -16,53 +25,187 @@ function addNumbers(...numbers){
     return sum;
 }
 
-//3. Write a javascript program to find square root?
+
+//4.Write a function that takes an integer minutes and converts it to seconds.
+
+function convertMinutesToSeconds(minutes) {
+	return minutes * 60;
+}
+
+//5. 4.Write a function that takes an integer hours and converts it to seconds.
+function convertHoursToSeconds(hours) {
+	return hours * 60 * 60;
+}
+
+//6. Create a function that takes a number as an argument, increments the number by +1 and returns the result.
+
+function incrementByNumber(num, incrment) {
+	return num + increment;
+}
+
+//7. Write a javascript program to find square root?
 function findSquareRoot(input) {
-    let result = Math.sqrt(input);
-    return result;
+    return Math.sqrt(input);
 }
 
 
-//4. Write a javascript program to calculate area of a triangle?
+//8. Write a function that takes the radius of a circle and return its area.
+
+function areaCircle(radius){
+    const PI = 3.1416;
+    return PI * radius * radius;
+}
+
+//9. Write a javascript program to calculate area of a triangle?
 
 function findTriangleArea(base,height) {
     return 0.5 * base * height;
 }
  
+//10. Create a function that takes the age in years and returns the age in days.
 
-//5. Write a javascript program to swap to variables
+function findAgeDays(birthYear){
+    let age = 0,numberOfDays = 0;
+    let currentYear = new Date().getFullYear();
+    age = currentYear - birthYear;
+    for(let i=birthYear+1; i<=currentYear; i++) {
+        if(isLeapYear(i) )
+            numberOfDays += 366;
+        
+        else numberOfDays += 365;
+    }
+    return age;
+}
+
+//11. Write a function to swap variables
 
 function swapVariables(firstNumber,secondNumber){
     [secondNumber,firstNumber] = [firstNumber,secondNumber];
     return [firstNumber,secondNumber];
 }
 
-
-//6. Write a javascript program to convert Kilogram into miles?
-
-function kilogramToMiles(input){
-    return 0.621*input;
+function swapVariable(firstNumber,secondNumber){
+    let temp = firstNumber;
+    firstNumber = secondNumber;
+    secondNumber = temp;
+    return [firstNumber,secondNumber];
 }
 
-//7. Write a javascript program to convert Celcius to Farenhite?
 
-function celciusToFarenhite(input) {
-    let result = ((9/5)*input)+ 32;
+//12. Write a javascript program to convert Kilogram into miles?
+
+function kilogramToMiles(kilogram){
+    return 0.621 * kilogram;
+}
+
+//13. Write a javascript program to convert Celcius to Farenhite?
+
+function celciusToFarenhite(celcius) {
+    let result = ((9/5) * celcius) + 32;
     return result;
 }
 
-//8. Write a javascript program to generate a random number between 0 to 100?
+
+//14. Write a function that returns first letter of a text?
+
+function getFirstLetter(text) {
+    return text[0];
+}
+
+//15. Write a function that returns integer remainder of two numbers
+function findRemainder(x, y) {
+	return parseInt(x % y);
+}
+
+
+//16. Create a function that takes length and width and finds the perimeter of a rectangle.
+
+function rectanglePerimeter(length, width) {
+    return 2 * (length * width);
+}
+
+//17. Create a function that takes radius and find the perimeter of a circle.
+
+function circlePerimeter(radius) {
+    const PI = 3.1416;
+    return 2 * PI * radius;
+}
+//18. Write a javascript program to generate a random number between 0 to 100?
 
 function generateRandomNumber() {
     return Math.floor(Math.random()*101);
 }
 
-//9. Write a javascript program to generate a random number between a range?
+//19. Write a function that takes an array of voter and number  as input and  and returns the array of ages which are equal or above that number?
+
+function findNumbersOver(array, number) {
+    let result = [];
+    let size = array.length;
+    for(let i=0; i<size; i++ ) {
+        if(array[i] >= number) {
+            result.push(array[i]);
+        }
+    }
+    return result;
+}
+
+//20. Write a function that takes a string and two positions and returns a string between given positions?
+
+function getSlicedString(text, position1, position2) {
+    return text.slice(position1-1, (position1-1+(position2-position1 + 1)))
+}
+
+/*
+21. Write a function that takes a text and string as input. If that text contains that string, 
+it returns a value which adds that string at the beginning else if returns a value which adds that string
+at the end.
+*/
+
+function addString(text,str){
+    return text.includes(str) ? str.concat(text) : text.concat(str);
+}
+
+
+//22. Write a javascript program to generate a random number between a range?
 
 function randomNumberGenerator(max,min){
     return Math.floor(Math.random() * (max - min) ) + min;
 }
 
+//23. Write a javascript function that removes first nth elements of an array?
+
+function removeFirstElementsArray(arr,input) {
+    return arr.slice(input)
+}
+
+
+//24. Write a function that takes an array (a) as argument. Extract the last 3 elements of 'a'. Return the resulting array
+
+function removeLastElementsArray(arr,input) {
+    return arr.slice(-input)
+}
+
+//25.Write a function that takes an array(a) as argument. Extract the first 3 elements of a;
+
+function extractFirstArrayElements(arr,numberOfElements){
+    return arr.slice(0,numberOfElements)
+}
+
+/*26. Write a function that takes an array (a) and a value (b) as argument. The function should remove all elements equal to 'b' from the array. 
+Return the filtered array. Plz don't use filter function
+*/
+
+function filtereArray(array, removeItem) {
+    let filteredArray = [];
+    let size = array.length;
+    for(let i=0; i<=size-1; i++) {
+        if(array[i] !== removeItem)
+        filteredArray.push(array[i]);
+    }
+    return filteredArray;
+}
+
+console.log(filtereArray([false,'2',1], false))
 //10. Write a javascript program to find a positive,negative or zero?
 
 function checkNumber(input) {
@@ -333,6 +476,8 @@ function isLeapYear(inputYear){
 
     return result;
 }
+
+
 
 
 //34. Write a function that returns odd numbers from a given numbers of input?
