@@ -1,94 +1,188 @@
-//Javascript problems
+//Javascript Problems
 
-//1.Create a function that takes two numbers as arguments and returns their sum.
+/*
+Number Related Problems
+*/
+
+/*
+1.Create a function that takes two numbers as arguments and returns their sum 
+  For invalid input, return a string error message
+*/
+
 function addition(a, b) {
+    if(typeof a === 'number' && typeof b === "number" && arguments.length >= 2 && !isNaN(a) && !isNaN(b) )
 	return a + b;
+
+    else return "Please enter a valid number or enter at least two numbers"
 }
 
 
-//2.Create a function that takes any numbers as arguments and returns their sum.
+/*
+2.Create a function that takes any numbers as arguments and returns their sum.
+For invalid input, return a string error message
+*/
+
 function sumNumbers(){
-    let sum = 0;
-    for(let i=0; i<arguments.length; i++){
-        sum += arguments[i]
+    let errorMessage = "";
+    
+    if(arguments.length >= 2 ) {
+        let size = arguments.length;
+        let sum = 0;
+        for(let i=0; i<size; i++){
+            if(typeof arguments[i] === "number" && !isNaN(arguments[i]))
+            sum += arguments[i]
+            
+            else errorMessage = "Please enter a valid number"
+        }
+        
     }
-    return sum;
+
+    else errorMessage = "Please enter at least two numbers";
+
+    if(!!errorMessage.length)
+    return errorMessage;
+
+    else return sum;
+    
 }
 
-//3. Write a program that takes numbers as input and returns the sum?
+
+//Different way
 
 function addNumbers(...numbers){
-    let sum = 0;
-    for(let i of numbers) {
-        sum += i;
-    }
-    return sum;
-}
+    let errorMessage = "";
+    let sum = 0; 
 
+    if(numbers.length >= 2) {
+        
+        for(let number of numbers) {
+            if(typeof number === 'number' && !isNaN(number))
+            sum += number;
+
+            else {
+                errorMessage = "Please enter a valid number";
+                break;
+            }
+        }
+    }
+    
+    if(!!errorMessage.length)
+    return errorMessage;
+
+    else return sum;
+}
 
 //4.Write a function that takes an integer minutes and converts it to seconds.
 
 function convertMinutesToSeconds(minutes) {
+    if(typeof minutes === 'number' && !isNaN(minutes))
 	return minutes * 60;
+
+    else return "Please enter a valid number for minutes."
 }
+
 
 //5. 4.Write a function that takes an integer hours and converts it to seconds.
 function convertHoursToSeconds(hours) {
+    if(typeof hours === 'number' && !isNaN(hours))
 	return hours * 60 * 60;
+    
+    else return "Please enter a valid number as hours"
 }
 
 //6. Create a function that takes a number as an argument, increments the number by +1 and returns the result.
 
-function incrementByNumber(num, incrment) {
+function incrementByNumber(num, increment) {
+    if(typeof num === 'number' && !isNaN(num) && typeof increment === 'number' && !isNaN(increment))
 	return num + increment;
+
+    else return "Please enter at least two valid numbers"
 }
 
 //7. Write a javascript program to find square root?
-function findSquareRoot(input) {
-    return Math.sqrt(input);
+function findSquareRoot(number) {
+    if(typeof number === 'number' && !isNaN(number))
+    return Math.sqrt(number);
+
+    else return "Please enter a valid number as input"
 }
 
+
+//alternative approach
+
+function getSquareRoot(number) {
+    if(typeof number === 'number' && !isNaN(number))
+    return number ** 0.5;
+
+    else return "Please enter a valid number as input"
+
+}
 
 //8. Write a function that takes the radius of a circle and return its area.
 
 function areaCircle(radius){
     const PI = 3.1416;
+    if(typeof radius === 'number' && !isNaN(radius))
     return PI * radius * radius;
+
+    else return "Please enter a valid number for radius"
 }
+
 
 //9. Write a javascript program to calculate area of a triangle?
 
 function findTriangleArea(base,height) {
+    if(typeof base === "number" && !isNaN(base) && typeof height === "number" && !isNaN(height))
     return 0.5 * base * height;
+
+    else return "Please enter valid number for base and height"
 }
  
+
 //10. Create a function that takes the age in years and returns the age in days.
 
 function findAgeDays(birthYear){
-    let age = 0,numberOfDays = 0;
-    let currentYear = new Date().getFullYear();
-    age = currentYear - birthYear;
-    for(let i=birthYear+1; i<=currentYear; i++) {
-        if(isLeapYear(i) )
-            numberOfDays += 366;
-        
-        else numberOfDays += 365;
+    if(typeof birthYear === 'number' && !isNaN(birthYear)) {
+        let age = 0,numberOfDays = 0;
+        let currentYear = new Date().getFullYear();
+        age = currentYear - birthYear;
+        for(let i=birthYear+1; i<=currentYear; i++) {
+            if(isLeapYear(i) )
+                numberOfDays += 366;
+            
+            else numberOfDays += 365;
+        }
+        return age;
     }
-    return age;
+
+    else return "Please enter a valid nummber"
 }
 
-//11. Write a function to swap variables
-
+/*
+11. Write a function to swap variables
+It takes two numbers as input and returns an array after swapping the values
+*/
 function swapVariables(firstNumber,secondNumber){
-    [secondNumber,firstNumber] = [firstNumber,secondNumber];
-    return [firstNumber,secondNumber];
+    if(typeof firstNumber === "number" && !isNaN(firstNumber) && typeof secondNumber === "number" && !isNaN(secondNumber)) {
+        [secondNumber,firstNumber] = [firstNumber,secondNumber];
+        return [firstNumber,secondNumber];
+    }
+    
+    else return "Please enter a valid number"
 }
 
+
+//Alternative approach
 function swapVariable(firstNumber,secondNumber){
-    let temp = firstNumber;
-    firstNumber = secondNumber;
-    secondNumber = temp;
-    return [firstNumber,secondNumber];
+
+    if(typeof firstNumber === 'number' && !isNaN(firstNumber) && typeof secondNumber === 'number' && !isNaN(secondNumber)) {
+        let temp = firstNumber;
+        firstNumber = secondNumber;
+        secondNumber = temp;
+        return [firstNumber,secondNumber];
+    }
+
+    else return "Please enter valid number as input"
 }
 
 
@@ -878,7 +972,7 @@ function mindGame(positiveNumber) {
     The user input must be a positive number
     Otherwise an error message will be returned
     */
-    if (typeof positiveNumber === "number") {
+    if (typeof positiveNumber === "number" ) {
         if(positiveNumber > 0) {
             return ((positiveNumber * 3) + 10) / 2 - 5;
           }
@@ -889,7 +983,6 @@ function mindGame(positiveNumber) {
     else return "Please don't enter anything except number!!!"
    
 }
-
 
 
 function evenOdd(inputString) {
@@ -914,7 +1007,7 @@ function isLGSeven(inputNumber) {
     The user input must be a number
     Otherwise an error message will be returned
     */
-    if(typeof inputNumber === "number") {
+    if(typeof inputNumber === "number" && !isNaN(inputNumber)) {
         let result =  inputNumber - 7;
         return result < 7 ? result : inputNumber * 2;
     }
@@ -955,7 +1048,7 @@ function gemsToDiamond (gemsNumber1, gemsNumber2, gemsNumber3) {
     returns the result.
     */
     if(arguments.length >= 3) {
-        if( typeof gemsNumber1 === "number" && typeof gemsNumber2 === "number" && typeof gemsNumber3 === "number") {
+        if( typeof gemsNumber1 === "number" && typeof gemsNumber2 === "number" && typeof gemsNumber3 === "number" && !isNaN(gemsNumber1) && !isNaN(gemsNumber2)  && !isNaN(gemsNumber3)) {
            let totalDiamonds = gemsNumber1 * 21 + gemsNumber2 * 32 + gemsNumber3 * 43;
            return totalDiamonds > 1000 * 2 ? totalDiamonds - 2000 : totalDiamonds;
         }
