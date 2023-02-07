@@ -868,3 +868,101 @@ function greetMessage(name){
     return name.concat(" ",greet);
 }
 
+
+
+
+
+function mindGame(positiveNumber) {
+    /*
+    This function takes a positive number from user and returns a value based on the input
+    The user input must be a positive number
+    Otherwise an error message will be returned
+    */
+    if (typeof positiveNumber === "number") {
+        if(positiveNumber > 0) {
+            return ((positiveNumber * 3) + 10) / 2 - 5;
+          }
+      
+        else return "Enter a positive number please!!!!" 
+    }
+
+    else return "Please don't enter anything except number!!!"
+   
+}
+
+
+
+function evenOdd(inputString) {
+    /*
+     Expects an  string input from user and returns "even" or "odd"
+     based on the length of string.
+     The user input must be string
+     Otherwise an error message will be returned
+     */
+    if(typeof inputString === "string") {
+        return inputString.length % 2 === 0 ? "even" : "odd"
+    }
+    else return "Sorry!!! Invalid user input. Please only string text is allowed"
+}
+
+
+
+function isLGSeven(inputNumber) {
+    /*
+    Takes an user input as number.
+    Subtracts 7 from input. If the result < 7, result is returned else the double of the input is returned
+    The user input must be a number
+    Otherwise an error message will be returned
+    */
+    if(typeof inputNumber === "number") {
+        let result =  inputNumber - 7;
+        return result < 7 ? result : inputNumber * 2;
+    }
+
+    else return "Sorry!!! Invalid user input. Please only number is allowed"
+}
+
+
+function findingBadData(inputArray) {
+
+    /*
+    Takes an array of numbers as input 
+    If the array element contains anything negative number, it will be counted as bad data.
+    Counts the number of bad data.
+    The user input must be an array
+    Otherwise an error message will be returned
+    */
+    if (Array.isArray(inputArray)) {
+        const badData = [];
+        for(number of inputArray) {
+            if(number < 0) 
+            badData.push(number)
+        }
+
+        return badData.length;
+    }
+
+    else return "Please enter a data of array type!!!"
+
+}
+
+
+function gemsToDiamond (gemsNumber1, gemsNumber2, gemsNumber3) {
+    /*
+    Takes atleast three gems number as input otherwise error message will be returned
+    Calculates the total diamonds from the gem
+    Returns the total value if less than 2000, else substracts the total diamonds from 2000 and then 
+    returns the result.
+    */
+    if(arguments.length >= 3) {
+        if( typeof gemsNumber1 === "number" && typeof gemsNumber2 === "number" && typeof gemsNumber3 === "number") {
+           let totalDiamonds = gemsNumber1 * 21 + gemsNumber2 * 32 + gemsNumber3 * 43;
+           return totalDiamonds > 1000 * 2 ? totalDiamonds - 2000 : totalDiamonds;
+        }
+        else return "Sorry dear!!! Enter  only numbers or I won't give you any result"
+    }
+   
+
+    else return "Sorry dear!!!You must enter atleast three numbers to get results";
+}
+
