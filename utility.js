@@ -189,34 +189,48 @@ function swapVariable(firstNumber,secondNumber){
 //12. Write a javascript program to convert Kilogram into miles?
 
 function kilogramToMiles(kilogram){
+    if(typeof kilogram === 'number' && !isNaN(kilogram))
     return 0.621 * kilogram;
+
+    else return "Please enter a valid number for celcius";
 }
 
 //13. Write a javascript program to convert Celcius to Farenhite?
-
 function celciusToFarenhite(celcius) {
-    let result = ((9/5) * celcius) + 32;
-    return result;
+    if(typeof celcius === 'number' && !isNaN(celcius)) {
+        let result = ((9/5) * celcius) + 32;
+        return result;
+    }
+   
+    else return "Please enter a valid number for celcius";
 }
 
 
-//14. Write a function that returns first letter of a text?
-
-function getFirstLetter(text) {
-    return text[0];
-}
-
-//15. Write a function that returns integer remainder of two numbers
+//14. Write a function that returns integer remainder of two numbers
 function findRemainder(x, y) {
+    if(typeof x === 'number' && typeof y === 'number' && !isNaN(x) && !isNaN(y))
 	return parseInt(x % y);
+
+    else return "Please enter valid numbers as input";
 }
 
+//15. Write a function that returns first letter of a text?
+function getFirstLetter(text) {
+    if(typeof text === "string")
+    return text[0];
+    
+    else return "Please enter only string as input"
+}
 
 //16. Create a function that takes length and width and finds the perimeter of a rectangle.
 
 function rectanglePerimeter(length, width) {
+    if(typeof length === "number" && typeof width === "number" && !isNaN(length) && !isNaN(width))
     return 2 * (length * width);
+
+    else return "Please enter only number as input"
 }
+
 
 //17. Create a function that takes radius and find the perimeter of a circle.
 
@@ -224,11 +238,15 @@ function circlePerimeter(radius) {
     const PI = 3.1416;
     return 2 * PI * radius;
 }
-//18. Write a javascript program to generate a random number between 0 to 100?
+//18. Write a javascript program to generate a random number between two input numbers (first included and second excluded)?
 
-function generateRandomNumber() {
-    return Math.floor(Math.random()*101);
+function generateRandomNumber(min, max) {
+    if(typeof min === "number" && !isNaN(min) && typeof max === "number" && !isNaN(max))
+    return Math.floor(Math.random() * (max - min) + 1);
+
+    else return "Please enter only numbers"
 }
+
 
 //19. Write a function that takes an array of voter and number  as input and  and returns the array of ages which are equal or above that number?
 
@@ -299,7 +317,7 @@ function filtereArray(array, removeItem) {
     return filteredArray;
 }
 
-console.log(filtereArray([false,'2',1], false))
+
 //10. Write a javascript program to find a positive,negative or zero?
 
 function checkNumber(input) {
@@ -1058,4 +1076,17 @@ function gemsToDiamond (gemsNumber1, gemsNumber2, gemsNumber3) {
 
     else return "Sorry dear!!!You must enter atleast three numbers to get results";
 }
+
+
+
+// let obj = {
+//     1: "Java",
+//     2:"Python",
+//     3: "Javascript",
+//     length:3
+// }
+
+// for(let value of obj) {
+//     console.log(value)
+// }
 
