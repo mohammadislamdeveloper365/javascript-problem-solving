@@ -231,12 +231,17 @@ function rectanglePerimeter(length, width) {
     else return "Please enter only number as input"
 }
 
-
 //17. Create a function that takes radius and find the perimeter of a circle.
 
 function circlePerimeter(radius) {
-    const PI = 3.1416;
-    return 2 * PI * radius;
+    if(typeof radius === 'number') {
+        const PI = 3.1416;
+        return 2 * PI * radius;
+    }
+
+    else return "Please enter a valid number";
+
+
 }
 //18. Write a javascript program to generate a random number between two input numbers (first included and second excluded)?
 
@@ -244,11 +249,152 @@ function generateRandomNumber(min, max) {
     if(typeof min === "number" && !isNaN(min) && typeof max === "number" && !isNaN(max))
     return Math.floor(Math.random() * (max - min) + 1);
 
-    else return "Please enter only numbers"
+    else return "Please enter only numbers";
+}
+
+//19. Write a javascript prorgam which takes an input as a number and returns fibonacci series until a number?
+function getFibonacciSeries(inputNumber) {
+    if(typeof inputNumber === 'number') {
+        let fibonacciSeries = [];
+        fibonacciSeries[0] = 0;
+        fibonacciSeries[1] = 1;
+    
+    for (let i=2; i<inputNumber; i++) {
+        fibonacciSeries[i] = fibonacciSeries[i-1] + fibonacciSeries[i-2];
+        fibonacciSeries.push(fibonacciSeries[i]);
+    }
+
+        return fibonacciSeries;
+    }
+
+    else return "Please enter a valid number!!!"
+    
+
 }
 
 
-//19. Write a function that takes an array of voter and number  as input and  and returns the array of ages which are equal or above that number?
+//20. Write a javascript program which takes two input numbers and finds out if they have same last digit? 
+function isSameLastDigit (number1, number2) {
+    if(typeof number1 === "number" && typeof number2 === "number") {
+        number1 = number1.toString();
+        number2 = number2.toString();
+        if (number1[number1.length - 1] = number2[number2.length-1]) {
+            return true;
+        }
+
+        else return false
+    }
+
+    else return "Please enter a valid number"
+}
+
+
+//same problem with unknown input
+function areSameLastDigits(...inputNumbers) {
+    let errorMessage = "";
+    let isSameLastDigit = false;
+    if(!!inputNumbers.length) {
+        if(inputNumbers.length >= 2) {
+            for(let i=0; i<inputNumbers.length; i++) {
+                if(typeof inputNumbers[i] === 'number') {
+                    inputNumbers[i] = inputNumbers[i].toString();
+                    if(i >= 1) {
+                        if(inputNumbers[i][inputNumbers[i].length-1] === inputNumbers[i-1][inputNumbers[i-1].length-1] ) {
+                            console.log(inputNumbers[i], inputNumbers[i-1])
+                            isSameLastDigit = true;
+                        }
+
+                        else {
+                            isSameLastDigit = false;
+                            break;
+                        }
+                    }
+                }
+
+                else {
+                    errorMessage = "Please enter only numbers as input."
+                    break;
+                }
+            }
+
+            if(!!errorMessage)
+            return errorMessage;
+        
+            else return isSameLastDigit;
+        
+            
+        }
+        else {
+            errorMessage = "Please enter atleast two numbers as input"
+            return errorMessage
+        }
+    }
+
+    else errorMessage = "Please enter input";
+
+    return errorMessage;
+    
+}
+
+
+
+//20.Write a function that takes a number input and determines if it is an armstrong number?
+
+//19. Write a program to find an armstrong number?
+
+function isArmstrongNumber(number) {
+    if(typeof number === 'number') {
+        let remainder, result = 0, divisionResult = input, isArmstrong = false, tempInput,numberOfDigits;
+        tempInput = input;
+        numberOfDigits = input.toString().length;
+        do {
+            divisionResult = parseInt(tempInput / 10);
+            remainder = tempInput % 10;
+            result += (remainder ** numberOfDigits);
+            tempInput = divisionResult;
+        }while(tempInput !== 0);
+
+        if(result === input) {
+            isArmstrong = true;
+        }
+    
+    
+        return isArmstrong;
+    }
+    
+
+    else return "Please enter a valid number"
+    
+}
+
+//21.Write a program to find a list  of armstrong numbers between a given interval?
+
+function getArmstrongNumbers(min, max){
+
+    if(typeof min === "number" && typeof max === "number") {
+        let armstrongNumberList = [];
+        for(let i = min; i <= max; i++){
+            if(isArmstrongNumber(i))
+            armstrongNumberList.push(i);
+            
+        }
+    
+        return armstrongNumberList;
+    }
+   
+
+    else return "Please enter a valid number"
+}
+
+
+
+/*
+--------------------------
+Javascript String Problems
+*/
+
+
+//22. Write a function that takes an array of voter and number  as input and  and returns the array of ages which are equal or above that number?
 
 function findNumbersOver(array, number) {
     let result = [];
@@ -448,60 +594,12 @@ function findDigitSum(input){
 
 
 
-//19. Write a program to find an armstrong number?
-
-function isArmstrongNumber(input) {
-    input = parseInt(input);
-    let remainder, result = 0, divisionResult = input, isArmstrong = false, tempInput,numberOfDigits;
-    tempInput = input;
-    numberOfDigits = input.toString().length;
-    do {
-        divisionResult = parseInt(tempInput / 10);
-        remainder = tempInput % 10;
-        result += (remainder ** numberOfDigits);
-        tempInput = divisionResult;
-    }while(tempInput !== 0);
-
-    if(result === input)
-    isArmstrong = true;
-    
-    return isArmstrong;
-    
-}
-
-
-
-//20.Write a program to find a list  of armstrong numbers between a given interval?
-
-function getArmstrongNumbers(min, max){
-    let armstrongNumberList = [];
-    for(let i = min; i <= max; i++){
-        if(isArmstrongNumber(i))
-        armstrongNumberList.push(i);
-        
-    }
-
-    return armstrongNumberList;
-}
 
 
 
 
 
-//21. Write a program to check if the input numbers have same last digit?
-function isSameLastDigit(firstInput,secondInput){
-    let isSameLastDigit = false;
-    firstInput = parseInt(firstInput);
-    secondInput = parseInt(secondInput);
 
-    firstInput = firstInput.toString();
-    secondInput = secondInput.toString();
-
-    if(firstInput[firstInput.length-1] === secondInput[secondInput.length-1])
-    isSameLastDigit = true;
-
-    return isSameLastDigit;
-}
 
 
 
@@ -1089,4 +1187,48 @@ function gemsToDiamond (gemsNumber1, gemsNumber2, gemsNumber3) {
 // for(let value of obj) {
 //     console.log(value)
 // }
+
+// function demo(){
+//     console.dir(arguments)
+//     for(let i of arguments) {
+//         console.log(i)
+//     }
+// }
+
+// demo(1,3,5);
+
+//HTMLCOLLECTION VS NODELIST
+// Array like object (both)
+//HTMLCollection items can be accessed by their name, id, or index number. Nodelist can be accessed by only index
+// for loop for both. for of loop only for nodelist
+//Livelist htmlcollection nodelist is static
+
+
+// let lists = document.querySelectorAll(".lists")
+// console.log(lists);
+
+
+// let listss = document.getElementsByClassName("lists");
+// console.log(listss);
+
+// let list1 = document.createElement("li");
+// list1.innerText = "New list item";
+// list1.classList.add("lists");
+
+// let parent1 = document.getElementById("parent");
+// parent1.appendChild(list1)
+
+// console.log(listss);
+// console.log(lists);
+// let list2 = document.createElement("li");
+// list2.innerText = "New list item";
+// list2.classList.add("lists");
+// parent1.appendChild(list1)
+// console.log(parent1);
+// console.log(list1)
+
+
+// parent1.appendChild(list1)
+
+
 
