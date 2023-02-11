@@ -82,3 +82,32 @@ function hideUserEmail (email) {
     return 'Please enter a valid string'
 }
 
+
+/*
+7. Write a function to parameterize a string? 
+Test Data :
+input : string_parameterize("Robin Singh from USA."));
+output: "robin-singh-from-usa"
+*/
+
+function parameterizeString (text) {
+    if (typeof text === 'string') {
+        let arrText = text.split(' ');
+        console.log(arrText);
+        
+        if(arrText.length > 1) {
+            for(let i = 0; i<arrText.length; i++) {
+                if(!arrText[i]) 
+                arrText.splice(i);
+            }
+            return arrText.join('-');
+        }
+        
+        return arrText.toString();
+        
+    }
+
+    return "Please enter a valid string"
+}
+
+console.log(parameterizeString(66))
