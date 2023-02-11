@@ -3,13 +3,13 @@
 Javascript String Problems
 */
 
-//22. Write a JavaScript function to check whether an `input` is a string or not.
+//1. Write a JavaScript function to check whether an `input` is a string or not.
 
 function isString (inputString) {
     return typeof inputString  === 'string';
 }
 
-//23. Write a JavaScript function to check whether a string is blank or not.
+//2. Write a JavaScript function to check whether a string is blank or not.
 
 function isStringBlank (inputString) {
     if(typeof inputString === 'string'){
@@ -24,7 +24,7 @@ function isStringBlank (inputString) {
 
 
 
-// 23. Write a JavaScript function to split a string and convert it into an array of words.
+// 3. Write a JavaScript function to split a string and convert it into an array of words.
 
 function convertStringToArray (inputString) {
     if(typeof inputString === 'string') {
@@ -35,7 +35,7 @@ function convertStringToArray (inputString) {
 }
 
 
-//24. Write a JavaScript function to extract a specified number of characters from a string.
+//4. Write a JavaScript function to extract a specified number of characters from a string.
 function truncateString (inputString , truncateNumber) {
     if(typeof inputString === 'string') {
         return inputString.slice(0,truncateNumber);
@@ -45,7 +45,7 @@ function truncateString (inputString , truncateNumber) {
 
 
 
-//25. Write a JavaScript function to convert a last word of string in abbreviated form.
+//5. Write a JavaScript function to convert a last word of string in abbreviated form.
 
 function abbreviateName (inputString) {
     if(typeof inputString === 'string') {
@@ -60,5 +60,25 @@ function abbreviateName (inputString) {
     }
 
     return "Please enter a valid string";
+}
+
+//6. Write a JavaScript function to hide email addresses to protect from unauthorized user?
+
+function hideUserEmail (email) {
+    if(typeof email === 'string') {
+        let arrEmail = email.split('@');
+        let hiddenEmail = arrEmail[0];
+        if(!!hiddenEmail.length && hiddenEmail.length > 1) {
+            console.log(hiddenEmail)
+            console.log(hiddenEmail.length)
+            hiddenEmail = hiddenEmail.slice(0,hiddenEmail.length/2);
+            return hiddenEmail.concat('...','@',arrEmail[1]);
+        }
+
+        return ''.concat('...','@',arrEmail[1])
+
+    }
+
+    return 'Please enter a valid string'
 }
 

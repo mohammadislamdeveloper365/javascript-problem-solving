@@ -21,3 +21,34 @@ function calculateTriangleArea (side1, side2, side3) {
 
     return "Please enter number as input"
 }
+
+
+//3. Write a javascript function to find if a year is a leap year or not?
+function isLeapYear(inputYear){
+    if(typeof inputYear === 'number' && !isNaN(inputYear)) {
+        let result = false;
+        if((inputYear % 4 === 0) && (inputYear % 100 !== 0 || inputYear % 400 === 0)) {
+            result = true;
+        }
+
+        return result;
+    }
+
+    return "Please enter a valid number as year"
+}
+
+
+//4.Write a JavaScript program where the program takes a random integer between 1 to 10, . If the user input matches with guess number, the program will return true else false.
+
+function isGuessMatch (inputNumber) {
+    if(typeof inputNumber === 'number' && !isNaN(inputNumber)) {
+        let randomNumber = Math.floor(Math.random() * 10 + 1 );
+        console.log(randomNumber)
+        if(inputNumber === randomNumber)
+        return true;
+        else return false;
+    }
+
+    return "Please enter a valid number"
+}
+
