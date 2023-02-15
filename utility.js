@@ -1,5 +1,13 @@
 
+function checkNumber(num1) {
+    if(typeof num1 === "number" && !isNaN(num1)) 
+    return true;
+    return false;
+}
 
+function invalidNumberInputMessage() {
+    return "Please enter a valid number as input";
+}
 
 //20. Write a function that takes a string and two positions and returns a string between given positions?
 
@@ -60,7 +68,7 @@ function filtereArray(array, removeItem) {
 
 //10. Write a javascript program to find a positive,negative or zero?
 
-function checkNumber(input) {
+function checkNumberPositive(input) {
     if(input > 0)
     return 1;
     else if(input < 0)
@@ -771,58 +779,6 @@ function gemsToDiamond (gemsNumber1, gemsNumber2, gemsNumber3) {
 
 
 
-// let obj = {
-//     1: "Java",
-//     2:"Python",
-//     3: "Javascript",
-//     length:3
-// }
-
-// for(let value of obj) {
-//     console.log(value)
-// }
-
-// function demo(){
-//     console.dir(arguments)
-//     for(let i of arguments) {
-//         console.log(i)
-//     }
-// }
-
-// demo(1,3,5);
-
-//HTMLCOLLECTION VS NODELIST
-// Array like object (both)
-//HTMLCollection items can be accessed by their name, id, or index number. Nodelist can be accessed by only index
-// for loop for both. for of loop only for nodelist
-//Livelist htmlcollection nodelist is static
-
-
-// let lists = document.querySelectorAll(".lists")
-// console.log(lists);
-
-
-// let listss = document.getElementsByClassName("lists");
-// console.log(listss);
-
-// let list1 = document.createElement("li");
-// list1.innerText = "New list item";
-// list1.classList.add("lists");
-
-// let parent1 = document.getElementById("parent");
-// parent1.appendChild(list1)
-
-// console.log(listss);
-// console.log(lists);
-// let list2 = document.createElement("li");
-// list2.innerText = "New list item";
-// list2.classList.add("lists");
-// parent1.appendChild(list1)
-// console.log(parent1);
-// console.log(list1)
-
-
-// parent1.appendChild(list1)
 
 
 

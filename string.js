@@ -110,4 +110,3 @@ function parameterizeString (text) {
     return "Please enter a valid string"
 }
 
-console.log(parameterizeString(66))
