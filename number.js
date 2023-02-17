@@ -338,8 +338,6 @@ function areSameLastDigits(...inputNumbers) {
 
 
 
-//20.Write a function that takes a number input and determines if it is an armstrong number?
-
 //19. Write a program to find an armstrong number?
 
 function isArmstrongNumber(number) {
@@ -367,7 +365,7 @@ function isArmstrongNumber(number) {
     
 }
 
-//21.Write a program to find a list  of armstrong numbers between a given interval?
+//20.Write a program to find a list  of armstrong numbers between a given interval?
 
 function getArmstrongNumbers(min, max){
 
@@ -386,4 +384,15 @@ function getArmstrongNumbers(min, max){
     else return "Please enter a valid number"
 }
 
+
+//21. Write a JavaScript program to check whether a given positive number is a multiple of 3 or a multiple of 7.
+
+function isMultiple7Or3 (number) {
+    if(checkNumber(number)) {
+        if(number % 3 === 0 || number % 7 === 0)
+        return true;
+        else return false;
+    }
+    else return invalidNumberInputMessage();
+}
 

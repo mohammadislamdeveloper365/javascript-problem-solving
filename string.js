@@ -110,3 +110,119 @@ function parameterizeString (text) {
     return "Please enter a valid string"
 }
 
+
+/*
+8.  Write a JavaScript program to create a new string adding "Py" in front of a given string. 
+If the given string begins with "Py" 
+then return the original string. 
+Test data: 'Python' 
+output = 'Python'
+input : "thon"
+output: 'Python'
+*/
+
+function addPyBeforeText(input) {
+    if(isString(input)) {
+        let positionOfPy = input.indexOf('Py');
+        if(positionOfPy === 0)
+        return input;
+
+        else return "Py" + input;
+    }
+    else return invalidStringInputMessage();
+}
+
+
+/*
+9. Write a JavaScript program to remove a character at the specified position 
+of a given string and return the new string.
+*/
+
+function removeCharacterOfString(input,position) {
+    if(isString(input)) {
+        let newString = '';
+        let sizeOfString = input.length;
+        for(let i=0; i<sizeOfString; i++ ) {
+            if(position - 1 === i) continue;
+
+            else newString += input[i];
+
+        }
+        return newString;
+    }
+
+    else return invalidStringInputMessage();
+}
+
+
+
+/*
+10.Write a JavaScript program to create a new string from a given string 
+changing the position of first and last characters.
+The string length must be greater than or equal to 1.
+*/
+
+function swapStringFirstLastChar(input) {
+    if(isString(input) && input.length >= 1) {
+        let newString = '';
+        
+        if(input.length === 1) 
+        return input;
+
+        else {
+            newString = input.slice(1,input.length-1);
+            newString = input[input.length-1] + newString + input[0] ;
+            return newString;
+        }
+    }
+
+    return invalidStringInputMessage();
+}
+
+
+/*
+11.Write a JavaScript program to create a new string from a given string with the first character
+ of the given string added at the front and back.
+*/
+
+function addStringFrontBack(input) {
+    if(isString(input) && input.length >= 0)
+    return input[0] + input + input[0];
+    else return invalidStringInputMessage();
+}
+
+
+/*
+12. Write a JavaScript program to create a new string from a given string taking the last 3 characters 
+and added at both the front and back. The string length must be 3 or more.
+*/
+
+function addLastFrontBack(input,numberOfLastStrings) {
+    if(isString(input) && input.length >= numberOfLastStrings) {
+        if (input.length === numberOfLastStrings) 
+            return input.concat(input,input);
+        else {
+            let newString = '';
+            let slicedString = input.slice(-numberOfLastStrings);
+            newString = slicedString + input + slicedString;
+
+            return newString;
+        }
+    }
+
+    else return invalidStringInputMessage();
+}
+
+
+//13. Write a JavaScript program to check whether a string starts with input and false otherwise?
+
+function doesStartWithWord(input,wordToStart) {
+    if(isString(input)) {
+        input = input.toLowerCase();
+        wordToStart = wordToStart.toLowerCase();
+        let position = input.indexOf(wordToStart);
+        return position === 0;
+    }
+    else return invalidStringInputMessage();
+}
+

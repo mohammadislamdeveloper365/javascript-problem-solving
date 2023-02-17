@@ -9,6 +9,16 @@ function invalidNumberInputMessage() {
     return "Please enter a valid number as input";
 }
 
+function invalidStringInputMessage() {
+    return "Please enter a valid string as input";
+}
+
+
+function isString(input) {
+    if(typeof input === 'string')
+    return true;
+    else return false;
+}
 //20. Write a function that takes a string and two positions and returns a string between given positions?
 
 function getSlicedString(text, position1, position2) {
