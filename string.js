@@ -240,17 +240,17 @@ function startsWithWord(inputText,inputWord) {
 
 
 /*  
-Write a JavaScript program to check whether a string "Script" 
+15. Write a JavaScript program to check whether a string "Script" 
 presents at 5th (index 4) position in a given string, if "Script" presents 
 in the string return the string without "Script" otherwise return the original one.
 */
 
 function isWordPresent(input,word, position) {
     if(isString(input) && isString(word) && checkNumber(position)) {
-        return input.indexOf(word) === position - 1 ? input.slice(0) : input;
+        let newString = (input.slice(0,position-1) + input.slice((position + word.length-1)))
+        return input.indexOf(word) === position - 1 ? newString : input;
     }
 
     else return invalidInputMessage();
 }
 
-//Not done yet
