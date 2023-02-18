@@ -396,3 +396,38 @@ function isMultiple7Or3 (number) {
     else return invalidNumberInputMessage();
 }
 
+
+/*
+22. Write a JavaScript program to check whether two given integer values are in the range 50..99 
+(inclusive). 
+Return true if either of them are in the said range.
+*/
+
+function isInRange(num1, num2) {
+    if((checkNumber(num1) && !isNaN(num1)) || (checkNumber(num2) && !isNaN(num2))) {
+        return (num1 >= 50 && num1 <= 99 ) || (num2 >= 50 && num2 <= 99);
+    }
+
+    else return invalidNumberInputMessage()
+}
+
+
+/*
+23.Write a JavaScript program to check whether three given integer values are in the range 50..99 (inclusive). 
+Return true if one or more of them are in the said range.
+*/
+
+function areInRange(num1, num2, num3) {
+    if((checkNumber(num1) && !isNaN(num1)) || (checkNumber(num2) && !isNaN(num2))  || (checkNumber(num3) && !isNaN(num3))) {
+        return (num1 >= 50 && num1 <= 99 ) || (num2 >= 50 && num2 <= 99) || (num3 >= 50 && num3 <= 99);
+    }
+
+    else return invalidNumberInputMessage()
+}
+
+
+//22. Write a javascript program to generate a random number between a range?
+
+function randomNumberGenerator(max,min){
+    return Math.floor(Math.random() * (max - min) ) + min;
+}

@@ -226,3 +226,31 @@ function doesStartWithWord(input,wordToStart) {
     else return invalidStringInputMessage();
 }
 
+//14. Write a JavaScript program to check whether a string starts with 'Java' and false otherwise.
+
+function startsWithWord(inputText,inputWord) {
+    if(isString(inputText) && isString(inputWord)) {
+        inputText = inputText.toLowerCase();
+        inputWord = inputWord.toLowerCase();
+        return inputText.indexOf(inputWord) === 0;
+    }
+
+    else return invalidStringInputMessage();
+}
+
+
+/*  
+Write a JavaScript program to check whether a string "Script" 
+presents at 5th (index 4) position in a given string, if "Script" presents 
+in the string return the string without "Script" otherwise return the original one.
+*/
+
+function isWordPresent(input,word, position) {
+    if(isString(input) && isString(word) && checkNumber(position)) {
+        return input.indexOf(word) === position - 1 ? input.slice(0) : input;
+    }
+
+    else return invalidInputMessage();
+}
+
+//Not done yet

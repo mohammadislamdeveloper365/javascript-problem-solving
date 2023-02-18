@@ -13,6 +13,10 @@ function invalidStringInputMessage() {
     return "Please enter a valid string as input";
 }
 
+function invalidInputMessage() {
+    return "Please enter a valid string or number as input";
+}
+
 
 function isString(input) {
     if(typeof input === 'string')
@@ -36,44 +40,6 @@ function addString(text,str){
 }
 
 
-//22. Write a javascript program to generate a random number between a range?
-
-function randomNumberGenerator(max,min){
-    return Math.floor(Math.random() * (max - min) ) + min;
-}
-
-//23. Write a javascript function that removes first nth elements of an array?
-
-function removeFirstElementsArray(arr,input) {
-    return arr.slice(input)
-}
-
-
-//24. Write a function that takes an array (a) as argument. Extract the last 3 elements of 'a'. Return the resulting array
-
-function removeLastElementsArray(arr,input) {
-    return arr.slice(-input)
-}
-
-//25.Write a function that takes an array(a) as argument. Extract the first 3 elements of a;
-
-function extractFirstArrayElements(arr,numberOfElements){
-    return arr.slice(0,numberOfElements)
-}
-
-/*26. Write a function that takes an array (a) and a value (b) as argument. The function should remove all elements equal to 'b' from the array. 
-Return the filtered array. Plz don't use filter function
-*/
-
-function filtereArray(array, removeItem) {
-    let filteredArray = [];
-    let size = array.length;
-    for(let i=0; i<=size-1; i++) {
-        if(array[i] !== removeItem)
-        filteredArray.push(array[i]);
-    }
-    return filteredArray;
-}
 
 
 //10. Write a javascript program to find a positive,negative or zero?
