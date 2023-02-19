@@ -1,4 +1,41 @@
+function getElement(id) {
+    return document.getElementById(id);
+}
 
+function getElementValue(id, isInput) {
+    if(isInput) 
+    return getElement(id).value;
+    else return getElement(id).innerText;
+}
+
+function addListener(id, eventType, callBack) {
+    getElement(id).addEventListener(eventType,callBack);
+}
+
+
+function isNumber(input) {
+    if(typeof input && !isNaN(input)) 
+    return true;
+    else return false;
+}
+
+function convertToNumber(input) { 
+    return parseFloat(input).toFixed(2);
+}
+
+function createElement(tagName, bodyText) {
+    let element = document.createElement(tagName);
+    if(bodyText)
+    element.innerText = bodyText;
+    return element;
+}
+
+function addClassName(element,className) {
+    element.classList.add(className);
+}
+function showInputNumberErrorMessage() {
+    return "Please enter a valid number as input"
+}
 function checkNumber(num1) {
     if(typeof num1 === "number" && !isNaN(num1)) 
     return true;

@@ -1,20 +1,119 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script defer src="./utility.js"></script>
-    <script defer src="./number.js"></script>
-    <script defer src="./basic.js"></script>
-    <script defer src="./string.js"></script>
-    <script defer src="./array.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Genius</title>
+    <link rel="shortcut icon" href="./images/ellipse.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./stylesheet/library.css">
+    <link rel="stylesheet" href="./stylesheet/index.css">
+    <script defer src="./js/utility.js"></script>
+    <script defer src="./js/index.js"></script>
 </head>
 <body>
-   
-</body>
-</html>
+    <header class="container-xs geometry-genius-header mb-5">
+        <div class="p-3 bg-secondary d-flex justify-content-between align-items-center">
+            <div>
+                <h1>Interactive</h1>
+                <p class="text-light-dark">Geometry Genius</p>
+            </div>
+            <button class="btn btn-primary blog-btn" id="blog-btn">blog</button>
+        </div>
+    </header>
+    <main class="container-xs">
+        <div class="row">
+            <div class="row col-lg-9 p-3">
+                <div class="col-md-5 col-lg-3 geometry-box p-5 d-flex flex-column align-items-center" id="triangle-box">
+                    <img class="geometry-shape-img p-2 mb-3" src="./images/triangle.png" alt="triangle image">
+                    <h3 class="mb-5">Triangle</h3>
+                    <p class="mb-2">
+                        Area (A) = 0.5 x b x h
+                    </p>
+                    <div class="d-flex justify-content-center">
+                        <input type="text" value="b" class="input-shape mb-3 bg-light-dark" id="triangle-base"><span class="input-unit">cm</span>
+                        <input type="text" value="h" class="input-shape mb-3 bg-light-dark" id="triangle-height"><span class="input-unit">cm</span>
+                    </div>
+                    <button class="btn btn-primary calculate-btn" id="triangle-btn">Calculate</button>
+                    <p class="error-message" id="error-triangle"></p>
+                </div>
+                <div class="col-md-5 col-lg-3 geometry-box p-5 d-flex flex-column align-items-center" id="rectangle-box">
+                    <img class="geometry-shape-img p-2 mb-3" src="./images/rectangle.png" alt="rectangle image">
+                    <h3 class="mb-5">Rectangle</h3>
+                    <p class="mb-2">
+                        Area (A) = w x l
+                    </p>
+                    <div class="d-flex justify-content-center">
+                        <input type="text" value="w" id="rectangle-base" class="input-shape mb-3 bg-light-dark" ><span class="input-unit">cm</span>
+                        <input type="text" value="l" id="rectangle-height" class="input-shape mb-3 bg-light-dark" ><span class="input-unit">cm</span>
+                    </div>
+                    <button class="btn btn-primary calculate-btn" id="rectangle-btn">Calculate</button>
+                    <p class="error-message" id="error-rectangle"></p>
+                </div>
+                <div class="col-md-5 col-lg-3 geometry-box p-5 d-flex flex-column align-items-center" id="parallelogram-box">
+                    <img class="geometry-shape-img p-2 mb-3" src="./images/parallelogram.png" alt="parallelogram image">
+                    <h3 class="mb-5">Parallelogram</h3>
+                    <p class="mb-3">
+                        Area (A) = b x h
+                    </p>
+                    <div class="d-flex justify-content-center">
+                        <input type="text" value="b" class="input-shape mb-3 bg-light-dark" id="parallelogram-base"><span class="input-unit">cm</span>
+                        <input type="text" value="h" class="input-shape mb-3 bg-light-dark" id="parallelogram-height"><span class="input-unit">cm</span>
+                    </div>
+                    <button class="btn btn-primary calculate-btn" id="parallelogram-btn">Calculate</button>
+                    <p class="error-message" id="error-parallelogram"></p>
+                </div>
+                <div class="col-md-5 col-lg-3 geometry-box p-5 d-flex flex-column align-items-center" id="rhombus-box">
+                    <img class="geometry-shape-img p-2 mb-3" src="./images/rhombus.png" alt="rhombus image">
+                    <h3 class="mb-5">Rhombus</h3>
+                    <p class="mb-2">
+                        Area (A) = 0.5 x d1 x d2
+                    </p>
+                    <div class="d-flex justify-content-center">
+                        <input type="text" value="d1" class="input-shape mb-3 bg-light-dark" id="rhombus-base"><span class="input-unit">cm</span>
+                        <input type="text" value="d2" class="input-shape mb-3 bg-light-dark" id="rhombus-height"><span class="input-unit">cm</span>
+                    </div>
+                    <button class="btn btn-primary calculate-btn" id="rhombus-btn">Calculate</button>
+                    <p class="error-message" id="error-rhombus"></p>
+                </div>
+                <div class="col-md-5 col-lg-3 geometry-box p-5 d-flex flex-column align-items-center" id="pentagon-box">
+                    <img class="geometry-shape-img p-2 mb-3" src="./images/pentagon.png" alt="pentagon image">
+                    <h3 class="mb-5">Pentagon</h3>
+                    <p class="mb-2">
+                        Area (A) = 0.5 x p x b
+                    </p>
+                    <div class="d-flex justify-content-center">
+                        <input type="text" value="p" class="input-shape mb-3 bg-light-dark" id="pentagon-base"><span class="input-unit">cm</span>
+                        <input type="text" value="b" class="input-shape mb-3 bg-light-dark" id="pentagon-height"><span class="input-unit">cm</span>
+                    </div>
+                    <button class="btn btn-primary calculate-btn" id="pentagon-btn">Calculate</button>
+                    <p class="error-message" id="error-pentagon"></p>
+                </div>
+                <div class="col-md-5 col-lg-3 geometry-box p-5 d-flex flex-column align-items-center" id="ellipse-box">
+                    <img class="geometry-shape-img p-2 mb-3" src="./images/ellipse.png" alt="ellipse image">
+                    <h3 class="mb-5">Ellipse</h3>
+                    <p class="mb-2">
+                        Area (A) = &pi;ab
+                    </p>
+                    <div class="d-flex justify-content-center">
+                        <input type="text" value="a" class="input-shape mb-3 bg-light-dark" id="ellipse-base"><span class="input-unit">cm</span>
+                        <input type="text" value="b" class="input-shape mb-3 bg-light-dark" id="ellipse-height"><span class="input-unit">cm</span>
+                    </div>
+                    <button class="btn btn-primary calculate-btn" id="ellipse-btn">Calculate</button>
+                    <p class="error-message" id="error-ellipse"></p>
+                </div>
+            </div>
+            <div class="col-lg-3 p-3">
+                <p class="text-center mb-3">Area Calculation</p>
+                <div class="p-5">
+                    <ol id="result-list" >
+
+                    </ol>
+                </div>
+        </div>
+    </main>
 </body>
 </html>

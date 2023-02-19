@@ -1,0 +1,51 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.geometry-genius-header {
+    padding-top:1.5rem;
+}
+
+.blog-btn {
+    border-radius:0.5rem;
+}
+
+.geometry-box {
+    margin:0 1rem 3rem 0;
+}
+
+.geometry-shape-img {
+    width:100%;
+    height:150px;
+}
+
+.input-shape {
+    border:none;
+    padding:0.2rem;
+    outline:none;
+    width:30%;
+    margin-right:0.5rem;
+}
+.input-unit {
+    margin-right: 0.5rem;
+}
+
+.calculate-btn {
+    width:100%;
+    border-radius:0.5rem;
+}
+
+.error-message {
+    color:red;
+}
+
+.btn-converter {
+    padding:0.5rem;
+    border-radius:0.5rem;
+    font-size:1rem;
+}
+@media only screen and (max-width:767px){
+    .geometry-shape-img {
+        width:50%;
+    }
+}
