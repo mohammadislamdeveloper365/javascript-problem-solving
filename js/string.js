@@ -254,3 +254,49 @@ function isWordPresent(input,word, position) {
     else return invalidInputMessage();
 }
 
+/*
+16. Write a program to check whether a specified character 
+exists within the 2nd to 4th position in a given string.
+*/
+
+let isCharInRange = (char, input, minRange, maxRange) => {
+    if(isString(char) && isString(input) && checkNumber(minRange) && checkNumber(maxRange)) {
+        input = input.toLowerCase();
+        char = char.toLowerCase();
+        let position = input.indexOf(char) + 1;
+        return position >= minRange && position <= maxRange;
+    }
+
+    else return invalidStringInputMessage();
+}
+
+//17. Write a function that takes a string and two positions and returns a string between given positions?
+
+function getSlicedString(text, position1, position2) {
+    return text.slice(position1-1, (position1-1+(position2-position1 + 1)))
+}
+
+/*
+18. Write a function that takes a text and string as input. If that text contains that string, 
+it returns a value which adds that string at the beginning else if returns a value which adds that string
+at the end.
+*/
+
+function addString(text,str){
+    return text.includes(str) ? str.concat(text) : text.concat(str);
+}
+
+/*
+19.  Write a JavaScript program to create new string with first input number of characters are in 
+lower case from a given string. 
+If the string length is less than input number convert all the characters in upper case.
+*/
+
+function upperLowerString(inputNumber, inputString) {
+    if(checkNumber(inputNumber) && isString(inputString)) {
+        let newString = inputString.slice(0,3);
+        return inputString.length >= inputNumber ? (newString.toLowerCase()  + inputString.slice(3)) : (newString.toUpperCase() + inputString.slice(3)) ;
+    }
+    else return invalidInputMessage();
+}
+

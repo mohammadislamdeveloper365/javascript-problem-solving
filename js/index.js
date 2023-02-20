@@ -117,75 +117,65 @@ addListener("ellipse-box","click",function (event) {
     shapeEventHandler(event,"ellipse-base","ellipse-height","error-ellipse")
 });
 
-addListener('triangle-box','mouseout',function(event){
-    getElement(event.target.id).style.backgroundColor = ""
+// addListener('triangle-box','mouseout',function(event){
+//     getElement(event.target.id).style.backgroundColor = ""
    
-})
-addListener('triangle-box','mouseover',function(event){
-    getElement(event.target.id).style.backgroundColor = 'rgba(' 
-    + randomcolor() + ',' + randomcolor() 
-    + ',' + randomcolor() + '\)'
+// })
+// addListener('triangle-box','mouseover',function(event){
+//     getElement(event.target.id).style.backgroundColor = 'rgba(' 
+//     + randomcolor() + ',' + randomcolor() 
+//     + ',' + randomcolor() + '\)'
     
-})
+// })
 
-addListener('rectangle-box','mouseout',function(event){
-    console.log(getElement(event.target.id).style.backgroundColor)
-    getElement(event.target.id).style.backgroundColor = ""
+// addListener('rectangle-box','mouseout',function(event){
+//     console.log(getElement(event.target.id).style.backgroundColor)
+//     getElement(event.target.id).style.backgroundColor = ""
    
-})
-addListener('rectangle-box','mouseover',function(event){
+// })
+// addListener('rectangle-box','mouseover',function(event){
 
-    getElement(event.target.id).style.backgroundColor = 'rgba(' 
-    + randomcolor() + ',' + randomcolor() 
-    + ',' + randomcolor() + '\)'
+//     getElement(event.target.id).style.backgroundColor = 'rgba(255,0,0,0.3)'
     
-})
-addListener('parallelogram-box','mouseout',function(event){
-    console.log(getElement(event.target.id).style.backgroundColor)
-    getElement(event.target.id).style.backgroundColor = ""
+// })
+// addListener('parallelogram-box','mouseout',function(event){
+//     console.log(getElement(event.target.id).style.backgroundColor)
+//     getElement(event.target.id).style.backgroundColor = ""
    
-})
-addListener('parallelogram-box','mouseover',function(event){
-    console.log(getElement(event.target.id).style.backgroundColor)
-    getElement(event.target.id).style.backgroundColor = 'rgba(' 
-    + randomcolor() + ',' + randomcolor() 
-    + ',' + randomcolor() + '\)'
+// })
+// addListener('parallelogram-box','mouseover',function(event){
+//     console.log(getElement(event.target.id).style.backgroundColor)
+//     getElement(event.target.id).style.backgroundColor = 'rgba(255,0,0,0.3)'
     
-})
+// })
 
-addListener('rhombus-box','mouseout',function(event){
-    console.log(getElement(event.target.id).style.backgroundColor)
-    getElement(event.target.id).style.backgroundColor = ""
+// addListener('rhombus-box','mouseout',function(event){
+//     console.log(getElement(event.target.id).style.backgroundColor)
+//     getElement(event.target.id).style.backgroundColor = ""
    
-})
-addListener('rhombus-box','mouseover',function(event){
-    console.log(getElement(event.target.id).style.backgroundColor)
-    getElement(event.target.id).style.backgroundColor = 'rgba(' 
-    + randomcolor() + ',' + randomcolor() 
-    + ',' + randomcolor() + '\)'
+// })
+// addListener('rhombus-box','mouseover',function(event){
+//     console.log(getElement(event.target.id).style.backgroundColor)
+//     getElement(event.target.id).style.backgroundColor = 'rgba(255,0,0,0.3)'
     
-})
-addListener('pentagon-box','mouseout',function(event){
-    console.log(getElement(event.target.id).style.backgroundColor)
-    getElement(event.target.id).style.backgroundColor = ""
+// })
+// addListener('pentagon-box','mouseout',function(event){
+//     console.log(getElement(event.target.id).style.backgroundColor)
+//     getElement(event.target.id).style.backgroundColor = ""
    
-})
-addListener('pentagon-box','mouseover',function(event){
-    console.log(getElement(event.target.id).style.backgroundColor)
-    getElement(event.target.id).style.backgroundColor = 'rgba(' 
-    + randomcolor() + ',' + randomcolor() 
-    + ',' + randomcolor() + '\)'
+// })
+// addListener('pentagon-box','mouseover',function(event){
+//     console.log(getElement(event.target.id).style.backgroundColor)
+//     getElement(event.target.id).style.backgroundColor = 'rgba(255,0,0,0.3)'
     
-})
-addListener('ellipse-box','mouseout',function(event){
-    console.log(getElement(event.target.id).style.backgroundColor)
-    getElement(event.target.id).style.backgroundColor = ""
+// })
+// addListener('ellipse-box','mouseout',function(event){
+//     console.log(getElement(event.target.id).style.backgroundColor)
+//     getElement(event.target.id).style.backgroundColor = ""
    
-})
-addListener('ellipse-box','mouseover',function(event){
-    console.log(getElement(event.target.id).style.backgroundColor)
-    getElement(event.target.id).style.backgroundColor = 'rgba(' 
-    + randomcolor() + ',' + randomcolor() 
-    + ',' + randomcolor() + '\)'
+// })
+// addListener('ellipse-box','mouseover',function(event){
+//     console.log(getElement(event.target.id).style.backgroundColor)
+//     getElement(event.target.id).style.backgroundColor = 'rgba(255,0,0,0.3)'
     
-})
+// })

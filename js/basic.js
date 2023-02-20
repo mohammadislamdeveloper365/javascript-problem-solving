@@ -145,4 +145,18 @@ function positive_negative(num1, num2) {
 }
 
 
-//11. 
+//11. Write a JavaScript program to check whether the last digit of the three given positive integers is same.
+
+function isLastDigitSame(num1, num2) {
+    if(checkNumber(num1) && checkNumber(num2)) {
+        num1 = num1.toString();
+        num2 = num2.toString();
+
+        return num1[num1.length-1] === num2[num2.length-1];
+    }
+
+    else return invalidNumberInputMessage();
+}
+
+
+

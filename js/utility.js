@@ -54,26 +54,18 @@ function invalidInputMessage() {
     return "Please enter a valid string or number as input";
 }
 
+function invalidObjectMessage() {
+    return "Please enter a valid object as input";
+}
 
 function isString(input) {
     if(typeof input === 'string')
     return true;
     else return false;
 }
-//20. Write a function that takes a string and two positions and returns a string between given positions?
 
-function getSlicedString(text, position1, position2) {
-    return text.slice(position1-1, (position1-1+(position2-position1 + 1)))
-}
-
-/*
-21. Write a function that takes a text and string as input. If that text contains that string, 
-it returns a value which adds that string at the beginning else if returns a value which adds that string
-at the end.
-*/
-
-function addString(text,str){
-    return text.includes(str) ? str.concat(text) : text.concat(str);
+function isObject(input) {
+    return typeof input === "object";
 }
 
 

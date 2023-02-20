@@ -431,3 +431,36 @@ function areInRange(num1, num2, num3) {
 function randomNumberGenerator(max,min){
     return Math.floor(Math.random() * (max - min) ) + min;
 }
+
+
+//23. Write a JavaScript program to find a value which is nearest to given number from two different given integer values.
+
+function findNearestNumber(num1, num2, number) {
+    if(checkNumber(num1) && checkNumber(num2) && checkNumber(number)) {
+        if(Math.abs(number-num1) < Math.abs(number-num2)) 
+        return num1;
+        else if(Math.abs(number-num1) < Math.abs(number-num2))
+        return num2;
+        else return "Both numbers are at same distance"
+    }
+
+    else return "Please enter valid number";
+}
+
+
+/*
+24.   Write a JavaScript program to find the larger number from the two
+ given positive integers, the two numbers are in the range of given range inclusive.
+ */
+
+ let findLargerNumberInRange = (num1, num2, minRange, maxRange) => {
+    if(checkNumber(num1) && checkNumber(num2) && checkNumber(minRange) && checkNumber(maxRange)) {
+        if((minRange <= num1 && num1 <= maxRange) && (minRange <= num2 && num2 <= maxRange)) {
+            return num1 > num2 ? num1 : num2;
+        }
+        else return "The numbers must be between the range"
+    }
+
+    else return "Please enter number as input"
+ }
+
