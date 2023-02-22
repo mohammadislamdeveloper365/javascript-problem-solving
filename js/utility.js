@@ -58,6 +58,10 @@ function invalidObjectMessage() {
     return "Please enter a valid object as input";
 }
 
+function invalidArrayMessage() {
+    return "Please enter array as input"
+}
+
 function isString(input) {
     if(typeof input === 'string')
     return true;

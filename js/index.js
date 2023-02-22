@@ -36,17 +36,17 @@ function shapeEventHandler(event,input1Id,input2Id,errorId) {
         result = areaPie(base,height);
         
         if(event.target.id === "triangle-btn" || event.target.id === "triangle-box" )
-        div1 = createElement('div',"Triangle");
+        div1 = createElement('li',"Triangle");
         else if(event.target.id === "rectangle-btn" ||  event.target.id === "rectangle-box")
-        div1 = createElement('div',"Rectangle");
+        div1 = createElement('li',"Rectangle");
         else if(event.target.id === "parallelogram-btn" || event.target.id === "parallelogram-box")
-        div1 = createElement('div',"Parallel");
+        div1 = createElement('li',"Parallel");
         else if(event.target.id === "rhombus-btn" || event.target.id === "rhombus-box")
-        div1 = createElement('div',"Rhombus");
+        div1 = createElement('li',"Rhombus");
         else if(event.target.id === "pentagon-btn" || event.target.id === "pentagon-box")
-        div1 = createElement('div',"Pentagon");
+        div1 = createElement('li',"Pentagon");
         else if (event.target.id === "ellipse-btn" || event.target.id === "ellipse-box")
-        div1 = createElement('div',"Ellipse");
+        div1 = createElement('li',"Ellipse");
         let div2 = createElement('div');
         let span = createElement('span',result+"cm");
         let sup = createElement('sup',2);
@@ -55,6 +55,7 @@ function shapeEventHandler(event,input1Id,input2Id,errorId) {
         resultField = getElement("result-list");
         addClassName(list,"d-flex");
         addClassName(list,"mb-3")
+        console.log(div1)
         div1.classList.add('col-xs-4');
         div2.classList.add('col-xs-4');
         button.classList.add('btn');
@@ -117,65 +118,70 @@ addListener("ellipse-box","click",function (event) {
     shapeEventHandler(event,"ellipse-base","ellipse-height","error-ellipse")
 });
 
-// addListener('triangle-box','mouseout',function(event){
-//     getElement(event.target.id).style.backgroundColor = ""
-   
-// })
-// addListener('triangle-box','mouseover',function(event){
-//     getElement(event.target.id).style.backgroundColor = 'rgba(' 
-//     + randomcolor() + ',' + randomcolor() 
-//     + ',' + randomcolor() + '\)'
+addListener('triangle-box','mouseleave',function(event){
+    getElement(event.target.id).style.backgroundColor = ""
     
-// })
+});
 
-// addListener('rectangle-box','mouseout',function(event){
-//     console.log(getElement(event.target.id).style.backgroundColor)
-//     getElement(event.target.id).style.backgroundColor = ""
-   
-// })
-// addListener('rectangle-box','mouseover',function(event){
+addListener('triangle-box','mouseenter',function(event){
+    getElement('triangle-box').style.backgroundColor = "rgba(255,0,0,1)"
+    getElement(event.target.id).style.backgroundColor = 'rgba(' 
+    + randomcolor() + ',' + randomcolor() 
+    + ',' + randomcolor() + ',0.5' + '\)'
+    
+})
 
-//     getElement(event.target.id).style.backgroundColor = 'rgba(255,0,0,0.3)'
-    
-// })
-// addListener('parallelogram-box','mouseout',function(event){
-//     console.log(getElement(event.target.id).style.backgroundColor)
-//     getElement(event.target.id).style.backgroundColor = ""
+addListener('rectangle-box','mouseleave',function(event){
+    getElement(event.target.id).style.backgroundColor = ""
    
-// })
-// addListener('parallelogram-box','mouseover',function(event){
-//     console.log(getElement(event.target.id).style.backgroundColor)
-//     getElement(event.target.id).style.backgroundColor = 'rgba(255,0,0,0.3)'
+})
+addListener('rectangle-box','mouseenter',function(event){
+    getElement(event.target.id).style.backgroundColor = 'rgba(' 
+    + randomcolor() + ',' + randomcolor() 
+    + ',' + randomcolor() + ',0.5' + '\)'
     
-// })
+})
+addListener('parallelogram-box','mouseleave',function(event){
+    getElement(event.target.id).style.backgroundColor = ""
+   
+})
+addListener('parallelogram-box','mouseenter',function(event){
+    getElement(event.target.id).style.backgroundColor = 'rgba(' 
+    + randomcolor() + ',' + randomcolor() 
+    + ',' + randomcolor() + ',0.5' +  '\)'
+    
+})
 
-// addListener('rhombus-box','mouseout',function(event){
-//     console.log(getElement(event.target.id).style.backgroundColor)
-//     getElement(event.target.id).style.backgroundColor = ""
+addListener('rhombus-box','mouseleave',function(event){
+    getElement(event.target.id).style.backgroundColor = ""
    
-// })
-// addListener('rhombus-box','mouseover',function(event){
-//     console.log(getElement(event.target.id).style.backgroundColor)
-//     getElement(event.target.id).style.backgroundColor = 'rgba(255,0,0,0.3)'
+})
+
+addListener('rhombus-box','mouseenter',function(event){
+    getElement(event.target.id).style.backgroundColor = 'rgba(' 
+    + randomcolor() + ',' + randomcolor() 
+    + ',' + randomcolor() + ',0.5' + '\)'
     
-// })
-// addListener('pentagon-box','mouseout',function(event){
-//     console.log(getElement(event.target.id).style.backgroundColor)
-//     getElement(event.target.id).style.backgroundColor = ""
+})
+addListener('pentagon-box','mouseleave',function(event){
+    getElement(event.target.id).style.backgroundColor = ""
    
-// })
-// addListener('pentagon-box','mouseover',function(event){
-//     console.log(getElement(event.target.id).style.backgroundColor)
-//     getElement(event.target.id).style.backgroundColor = 'rgba(255,0,0,0.3)'
+})
+addListener('pentagon-box','mouseenter',function(event){
+    getElement(event.target.id).style.backgroundColor = 'rgba(' 
+    + randomcolor() + ',' + randomcolor() 
+    + ',' + randomcolor() + ',0.5' + '\)'
     
-// })
-// addListener('ellipse-box','mouseout',function(event){
-//     console.log(getElement(event.target.id).style.backgroundColor)
-//     getElement(event.target.id).style.backgroundColor = ""
+})
+addListener('ellipse-box','mouseleave',function(event){
+    
+    getElement(event.target.id).style.backgroundColor = ""
    
-// })
-// addListener('ellipse-box','mouseover',function(event){
-//     console.log(getElement(event.target.id).style.backgroundColor)
-//     getElement(event.target.id).style.backgroundColor = 'rgba(255,0,0,0.3)'
+})
+addListener('ellipse-box','mouseenter',function(event){
     
-// })
+    getElement(event.target.id).style.backgroundColor = 'rgba(' 
+    + randomcolor() + ',' + randomcolor() 
+    + ',' + randomcolor() + ',0.5' + '\)'
+    
+})

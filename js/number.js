@@ -464,3 +464,74 @@ function findNearestNumber(num1, num2, number) {
     else return "Please enter number as input"
  }
 
+/*
+25. Write a JavaScript program to check three given numbers,
+ if the three numbers are same return 30 otherwise return 20 and if two numbers are same return 40.
+*/
+
+function isSameNumber(num1, num2, num3) {
+    if(checkNumber(num1) && checkNumber(num2) && checkNumber(num3)) {
+        if(num1 === num2 && num2 === num3)
+        return 30;
+
+        else if(num1 === num2 || num2 === num3 || num1 === num3)
+        return 40;
+
+        else return 20;
+    }
+
+    else return invalidNumberInputMessage();
+}
+
+
+/*
+25. Write a JavaScript program to check from three given numbers (non negative integers) that two or 
+all of them have the same rightmost digit. 
+*/
+
+function isSameRightMostDigit(num1, num2, num3) {
+    if(checkNumber(num1) && checkNumber(num2) && checkNumber(num3)) {
+        num1 = num1.toString();
+        num2 = num2.toString();
+        num3 = num3.toString();
+
+        if(num1[num1.length-1] === num2[num1.length-1] || num2[num1.length-1] === num3[num1.length-1] || num1[num1.length-1] === num3[num1.length-1])
+        return true;
+
+        else return false;
+    }
+
+    else return invalidNumberInputMessage();
+}
+
+
+
+
+
+/*
+26. Write a JavaScript program to check two given non-negative integers that whether 
+one of the number (not both) is multiple of 7 or 11
+*/
+
+function isMultiple7Or11(num1, num2) {
+    if(checkNumber(num1) && checkNumber(num2)) {
+        if(num1 > 0 && num2 > 0) {
+            
+            if(
+                ((num1 % 7 === 0 || num1 % 11 === 0) && (num2 % 7 !== 0 && num2 % 11 !== 0)) ||
+                ((num2 % 7 === 0 || num2 % 11 === 0) && (num1 % 7 !== 0 && num1 % 11 !== 0))
+
+            )
+            return true;
+
+            else return false;
+        }
+
+        else return "Only positive number is acceptable";
+    }
+
+    else return invalidNumberInputMessage();
+}
+
+
+

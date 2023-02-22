@@ -55,4 +55,3 @@ function filtereArray(array, removeItem) {
     }
     return filteredArray;
 }
-

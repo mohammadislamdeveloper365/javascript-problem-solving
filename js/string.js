@@ -28,7 +28,7 @@ function isStringBlank (inputString) {
 
 function convertStringToArray (inputString) {
     if(typeof inputString === 'string') {
-        return inputString.split(' ')
+        return inputString.split(" ")
     }
 
     return "Please enter a valid string as input"
@@ -299,4 +299,30 @@ function upperLowerString(inputNumber, inputString) {
     }
     else return invalidInputMessage();
 }
+
+/*
+20.  Write a JavaScript function to count the occurrence of a substring in a string. 
+Test Data :
+console.log(count("The quick brown fox jumps over the lazy dog", 'the'));
+Output :
+2
+*/
+
+function numOfOccurences(string, subString) {
+    if(isString(string) && isString(subString)) {
+        string = string.toLowerCase();
+        subString = subString.toLowerCase();
+        let newArray = [];
+        let array = string.split(" ");
+        for(let item of array) {
+            if(item === subString)
+            newArray.push(subString);
+        }
+        console.log(newArray)
+        return newArray.length;
+    }
+
+    else invalidStringInputMessage();
+}
+
 
