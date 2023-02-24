@@ -325,4 +325,87 @@ function numOfOccurences(string, subString) {
     else invalidStringInputMessage();
 }
 
+//21. Write a javascript program to reverse a string by letter?
+
+function reverseString(input) {
+    if(isString(input)) {
+        let reversedString = "";
+        for(let i=input.length-1; i>=0; i--) {
+            reversedString = reversedString.concat(input[i]);
+        }
+        return reversedString;
+    }
+
+    else return invalidStringInputMessage();
+}
+
+
+//22. Write a function to reverse a string by word?
+
+function reverseStringWord(input) {
+    if(isString(input)) {
+        let reversedStringArray = [];
+        let inputArray = input.split(" ");
+        for(let i=inputArray.length; i>=0; i--) {
+            reversedStringArray.push([inputArray[i]]);
+            console.log(reversedStringArray)
+        }
+        return reversedStringArray.join(" ");
+    }
+
+    else return invalidStringInputMessage();
+}
+
+/*
+23. Write a JavaScript program to replace every character in a given string 
+with the character following it in the alphabet.
+*/
+
+function replaceStringWithNextCharacter(input){
+    if(isString(input)) {
+            let resultString = "";
+            for(let i=0; i<=input.length; i++) {
+                switch(input[i]) {
+                    
+                    case 'z':
+                    resultString = resultString.concat('a');
+                    break;
+                    
+                    case 'Z':
+                    resultString = resultString.concat('A');
+                    break;
+
+                    case ' ':
+                    break;
+
+                    default:
+                    resultString = resultString.concat(String.fromCharCode(1 + input.charCodeAt(i)));
+
+                }
+            }
+       
+            return resultString;
+        
+    }
+
+    else return invalidStringInputMessage();
+}
+
+/*
+24. Write a JavaScript program to capitalize the first letter of each word of a given string.
+*/
+
+function capitalizeString(input) {
+    if(isString(input)){
+        let inputArray = input.split(" ");
+        let capitalizeArray = [];
+        for(let i of inputArray) {
+            capitalizeArray.push(i[0].toUpperCase() + i.slice(1));
+        }
+
+        return capitalizeArray.join(" ")
+    }
+
+    else return invalidStringInputMessage();
+}
 

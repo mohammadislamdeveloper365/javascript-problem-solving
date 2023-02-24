@@ -55,3 +55,22 @@ function filtereArray(array, removeItem) {
     }
     return filteredArray;
 }
+
+
+/*
+7. Write a JavaScript program to converts a specified number to an array of digits.
+*/
+
+function convertNumberToArray(input) {
+    if(checkNumber(input)) {
+        let inputString = input.toString();
+        let result = [];
+        for(let i of inputString) {
+            result.push(parseInt(i));
+        }
+        return result;
+    }
+
+    else return invalidNumberInputMessage();
+}
+
