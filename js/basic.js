@@ -160,3 +160,19 @@ function isLastDigitSame(num1, num2) {
 
 
 
+//11. Write a JavaScript program to convert a given number to hours and minutes.
+
+function convertHoursMins(input) {
+    if(checkNumber(input)) {
+        let hours = Math.floor(input / 60);
+        let minutes = input % 60;
+
+        return hours + ":" + minutes;
+
+    }
+
+    else return invalidNumberInputMessage();
+}
+
+
+//

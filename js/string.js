@@ -409,3 +409,20 @@ function capitalizeString(input) {
     else return invalidStringInputMessage();
 }
 
+
+
+//25.Write a JavaScript program to convert the letters of a given string in alphabetical order. 
+
+function convertAscendingOrderString(input) {
+    if(isString(input)) {
+        let inputArray = input.split("");
+        return inputArray.sort().join("")
+    }
+
+    else return invalidStringInputMessage()
+}
+
+
+
+
+

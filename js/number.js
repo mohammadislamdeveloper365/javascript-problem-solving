@@ -534,4 +534,40 @@ function isMultiple7Or11(num1, num2) {
 }
 
 
+/*
+27. How to sort numbers in javascript?
+*/
+
+function sortAscendingNumber(...numbers) {
+    if(Array.isArray(numbers)){
+        for(number of numbers) {
+            if(!checkNumber(number)) 
+            return invalidNumberInputMessage();
+        }
+
+        return numbers.sort(function(a,b){
+            return a-b;
+        })
+    }
+
+}
+
+
+/*
+28. How to sort numbers in descending order?
+*/
+
+function sortDescendingNumber(...numbers) {
+    if(Array.isArray(numbers)){
+        for(number of numbers) {
+            if(!checkNumber(number)) 
+            return invalidNumberInputMessage();
+        }
+
+        return numbers.sort(function(a,b){
+            return b-a;
+        })
+    }
+
+}
 
