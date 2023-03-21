@@ -15,37 +15,36 @@ function areaPie(base,height) {
     return  3.1416 * base * height;
 }
 
-function shapeEventHandler(event,input1Id,input2Id,errorId) {
+function shapeEventHandler(containerId,input1Id,input2Id,errorId) {
     let base = getElementValue(input1Id,true);
     let height = getElementValue(input2Id,true);
     let errorElement = getElement(errorId);
     if(isNumber(base) && isNumber(height)) {
         let list = createElement("li",'');
         let div1;
-        event.stopPropagation();
-        if(event.target.id === "triangle-btn" || event.target.id === "triangle-box" 
-        || event.target.id === "rhombus-btn" || event.target.id === "rhombus-box" 
-        || event.target.id === "pentagon-btn" || event.target.id === "pentagon-box" )
+        if( containerId === "triangle-box" 
+        || containerId === "rhombus-box" 
+        || containerId === "pentagon-box" )
         result = areaHalf(base,height);
         
-        else if(event.target.id === "parallelogram-btn" || event.target.id === "parallelogram-box" 
-            || event.target.id === "rectangle-btn" || event.target.id === "rectangle-box")
+        else if(containerId === "parallelogram-box" 
+            || containerId === "rectangle-box")
         result = areaFull(base,height);
 
-        else (event.target.id === "ellipse-btn" || event.target.id === "ellipse-box")
+        else ( containerId === "ellipse-box")
         result = areaPie(base,height);
         
-        if(event.target.id === "triangle-btn" || event.target.id === "triangle-box" )
+        if(containerId === "triangle-box" )
         div1 = createElement('li',"Triangle");
-        else if(event.target.id === "rectangle-btn" ||  event.target.id === "rectangle-box")
+        else if(  containerId === "rectangle-box")
         div1 = createElement('li',"Rectangle");
-        else if(event.target.id === "parallelogram-btn" || event.target.id === "parallelogram-box")
+        else if(containerId === "parallelogram-box")
         div1 = createElement('li',"Parallel");
-        else if(event.target.id === "rhombus-btn" || event.target.id === "rhombus-box")
+        else if(containerId === "rhombus-box")
         div1 = createElement('li',"Rhombus");
-        else if(event.target.id === "pentagon-btn" || event.target.id === "pentagon-box")
+        else if( containerId === "pentagon-box")
         div1 = createElement('li',"Pentagon");
-        else if (event.target.id === "ellipse-btn" || event.target.id === "ellipse-box")
+        else if (containerId === "ellipse-box")
         div1 = createElement('li',"Ellipse");
         let div2 = createElement('div');
         let span = createElement('span',result+"cm");
@@ -77,45 +76,33 @@ function randomcolor() {
     return Math.floor(Math.random() * 255);
 }
 
-addListener("triangle-btn","click",function (event) {
-    shapeEventHandler(event,"triangle-base","triangle-height","error-triangle")
+addListener("triangle-box","click",function () {
+    shapeEventHandler("triangle-box","triangle-base","triangle-height","error-triangle")
 })
-addListener("triangle-box","click",function (event) {
-    shapeEventHandler(event,"triangle-base","triangle-height","error-triangle")
-});
-addListener("rectangle-btn","click",function (event) {
-    shapeEventHandler(event,"rectangle-base","rectangle-height","error-rectangle")
-})
+
+
 addListener("rectangle-box","click",function (event) {
-    shapeEventHandler(event,"rectangle-base","rectangle-height","error-rectangle")
+    shapeEventHandler("rectangle-box","rectangle-base","rectangle-height","error-rectangle")
 });
 
-addListener("parallelogram-btn","click",function (event) {
-    shapeEventHandler(event,"parallelogram-base","parallelogram-height","error-parallelogram")
-})
+
 addListener("parallelogram-box","click",function (event) {
-    shapeEventHandler(event,"parallelogram-base","parallelogram-height","error-parallelogram")
+    shapeEventHandler("parallelogram-box","parallelogram-base","parallelogram-height","error-parallelogram")
 });
 
-addListener("rhombus-btn","click",function (event) {
-    shapeEventHandler(event,"rhombus-base","rhombus-height","error-rhombus")
-})
+
 addListener("rhombus-box","click",function (event) {
-    shapeEventHandler(event,"rhombus-base","rhombus-height","error-rhombus")
+    shapeEventHandler("rhombus-box","rhombus-base","rhombus-height","error-rhombus")
 });
 
-addListener("pentagon-btn","click",function (event) {
-    shapeEventHandler(event,"pentagon-base","pentagon-height","error-pentagon")
-})
+
 addListener("pentagon-box","click",function (event) {
-    shapeEventHandler(event,"pentagon-base","pentagon-height","error-pentagon")
+    shapeEventHandler("pentagon-box","pentagon-base","pentagon-height","error-pentagon")
 });
 
-addListener("ellipse-btn","click",function (event) {
-    shapeEventHandler(event,"ellipse-base","ellipse-height","error-ellipse")
-})
+
 addListener("ellipse-box","click",function (event) {
-    shapeEventHandler(event,"ellipse-base","ellipse-height","error-ellipse")
+    shapeEventHandler("ellipse-box","ellipse-base","ellipse-height","error-ellipse")
 });
 
 addListener('triangle-box','mouseleave',function(event){
@@ -124,7 +111,6 @@ addListener('triangle-box','mouseleave',function(event){
 });
 
 addListener('triangle-box','mouseenter',function(event){
-    getElement('triangle-box').style.backgroundColor = "rgba(255,0,0,1)"
     getElement(event.target.id).style.backgroundColor = 'rgba(' 
     + randomcolor() + ',' + randomcolor() 
     + ',' + randomcolor() + ',0.5' + '\)'
