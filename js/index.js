@@ -57,6 +57,7 @@ function shapeEventHandler(containerId,input1Id,input2Id,errorId) {
         console.log(div1)
         div1.classList.add('col-xs-4');
         div2.classList.add('col-xs-4');
+        div2.classList.add('mr-2');
         button.classList.add('btn');
         button.classList.add('btn-primary');
         button.classList.add('btn-converter');
@@ -171,3 +172,6 @@ addListener('ellipse-box','mouseenter',function(event){
     + ',' + randomcolor() + ',0.5' + '\)'
     
 })
+
+
+
